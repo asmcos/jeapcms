@@ -18,6 +18,7 @@ class category(Model):
 
 class content(Model):
 	id_order = Field(int)
+	cateid   = Field(int)
 	title    = Field(CHAR)
 	content  = Field(CHAR)
 	image    = Field(CHAR)

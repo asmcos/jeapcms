@@ -12,13 +12,14 @@ class siteinfoForm(Form):
 
 class categoryForm(Form):
         id_order = StringField(label="排序",default=0)
-        name     = StringField(label="模块")
-        temp     = StringField(label="模板名称",required=True)
+        name     = StringField(label="栏目名",required=True)
+        temp     = StringField(label="模板名称")
         image    = StringField(label="图片")
 
 class contentForm(Form):
         id_order = StringField(label="排序",default=0)
+        cateid   = StringField(label="栏目序号")
         title    = StringField(label="标题",required=True)
-        content  = StringField(label="内容",required=True)
+        content  = TextField(label="内容",required=True,rows=10,cols=60)
         image    = StringField(label="图片")
 
