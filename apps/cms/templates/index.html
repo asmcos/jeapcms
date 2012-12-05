@@ -5,27 +5,29 @@
 cont6 = category_content(6)
 cont7 = category_content(7)
 cont8 = category_content(8,limit=3)
+cont8_1 = category_content(8,limit=1)
 cont9 = category_content(9)
+cont10 = category_content(10,1)
 }}
 
 <div class="row">
-<div class="span3">
-<img src="static/1.png">
-最新活动
+	<div class="span3">
+		<img src="static/1.png">
+		最新活动
 
-</div>
-<div class="span3">
-<img src="static/2.png">
-公益视频
-</div>
-<div class="span3">
-<img src="static/3.png">
-入门书籍
-</div>
-<div class="span2" style="height:100px">
-<img src="static/4.png">
-热点文章
-</div>
+	</div>
+	<div class="span3">
+		<img src="static/2.png">
+		公益视频
+	</div>
+	<div class="span3">
+		<img src="static/3.png">
+		入门书籍
+	</div>
+	<div class="span2" style="height:100px">
+		<img src="static/4.png">
+		热点文章
+	</div>
 </div>
 
 <div class="row">
@@ -86,6 +88,39 @@ cont9 = category_content(9)
 
     </div>
   </div>
+
+
+<div class="row" style="height:150px">
+	<div class="span6">
+	<div class="row">
+		<div class="span3">
+		{{for n in cont10:}}
+		<h3>{{=n.title}}</h3>
+			{{=n.content}}
+		{{pass}}	
+		</div>
+		<div class="span2">
+		<img src="static/pic1.jpeg">
+		</div>
+	</div>
+	</div>
+	<div class="span5">
+	<div class="row">
+		<div class="span2">
+		{{for n in cont8_1:}}
+		<h3>{{=n.title}}</h3>
+			{{=n.content}}
+		{{pass}}	
+			
+		</div>
+		<div class="span2">
+		<img src="static/pic2.jpeg">
+		</div>
+	</div>
+	</div>
+
+
+</div>
 
 <div style="background:#4183c4;" class="styleguide-color">
 	{{for n in cont9:}}
