@@ -10,22 +10,29 @@ cont9 = category_content(9)
 cont10 = category_content(10,1)
 }}
 
-<div class="row">
-	<div class="span3">
-		<img src="static/1.png">
+<style type="text/css">
+#sub-hover a:hover img, #sub-hover a.hover img {
+  height: 100px;
+  width: 100px;
+}
+</style>
+
+<div class="row" id="sub-hover">
+	<div class="span3" >
+	<a href=#>	<img src="static/1.png"> </a>
 		最新活动
 
 	</div>
 	<div class="span3">
-		<img src="static/2.png">
+	<a href=#>	<img src="static/2.png"> </a>
 		公益视频
 	</div>
 	<div class="span3">
-		<img src="static/3.png">
+	<a href=#>	<img src="static/3.png"> </a>
 		入门书籍
 	</div>
 	<div class="span2" style="height:100px">
-		<img src="static/4.png">
+	<a href=#>	<img src="static/4.png"> </a>
 		热点文章
 	</div>
 </div>
