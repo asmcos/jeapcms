@@ -1,18 +1,22 @@
 {{extend "head.html"}}
 
 {{block content}}
-
+<div class="panel">
 
 <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">站点管理</a></li>
-    <li><a href="#tab2" data-toggle="tab">栏目管理</a></li>
+    <li><a href="#tab1" data-toggle="tab">站点管理</a></li>
+    <li class="active"><a href="#tab2" data-toggle="tab">栏目管理</a></li>
+    <li><a href="#tab3" data-toggle="tab">用户管理</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
+    <div class="tab-pane" id="tab1">
 	{{<<siteform}}
     </div>
-    <div class="tab-pane" id="tab2">
+    <div class="tab-pane " id="tab3">
+	所有的用户
+    </div>
+    <div class="tab-pane active" id="tab2">
 	{{block category_content}}
 	<div class="tabbable "> <!-- Only required for left/right tabs -->
 	  <ul class="nav nav-tabs">
@@ -21,14 +25,28 @@
   	</ul>
   	<div class="tab-content">
     	<div class="tab-pane active" id="catetab1">
-	<ul class="simple-conversation-list ">
+	<table class="table table-condensed">
+	<thead>
+    		<tr>
+		<td>序号</td>
+		<td>栏目名称</td>
+		<td>内容个数</td>
+		<td>#</td>
+		<td>#</td>
+		</tr>
+	</thead>
+	<tbody>
 	{{for n in category_all:}}
-	<li>	<input class="input-mini" type="text" placeholder=".input-mini" value={{=n.id_order}}>
-		<span class="state state-default">	{{=n.name}}</span> 
-		<a href="/admin/category_list/{{=n.id}}">查看内容</a> 
-	</li>
+	<tr>
+		<td><input class="input-mini" type="text" placeholder=".input-mini" value={{=n.id_order}}></td>
+		<td>{{=n.name}} </td>
+		<td>{{=n.num}}</td>
+		<td><a href="/admin/category_list/{{=n.id}}">查看内容</a> </td>
+		<td><a href="/admin/category_del/{{=n.id}}">删除内容</a> </td>
+	</tr>
 	{{pass}}
-	</ul>
+	</tbody>
+	</table>
     	</div>
     	<div class="tab-pane" id="catetab2">
 		{{<<categoryform}}
@@ -41,7 +59,7 @@
     </div>
   </div>
 </div>
-
+</div> <!--panel-->
 
 
 {{end}}

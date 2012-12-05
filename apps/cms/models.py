@@ -13,6 +13,7 @@ class siteinfo(Model):
 class category(Model):
 	id_order = Field(int)
 	name     = Field(CHAR)
+	num      = Field(int)
 	temp     = Field(CHAR)
 	image    = Field(CHAR)
 

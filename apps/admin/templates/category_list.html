@@ -20,13 +20,27 @@
   	 </ul>
   	<div class="tab-content">
     	<div class="tab-pane active" id="catetab1">
-	<ul class="simple-conversation-list ">
-	{{for n in cate_list:}}
-	<li>	<input class="input-mini" type="text" placeholder=".input-mini" value={{=n.id_order}}>
-		<span class="state state-default">	{{=n.title}}</span> 
-	</li>
-	{{pass}}
-	</ul>
+	<table class="table table-condensed">
+        <thead>
+                <tr>
+                <td>序号</td>
+                <td>标题</td>
+                <td>#</td>
+                <td>#</td>
+                </tr>
+        </thead>
+        <tbody>
+        {{for n in cate_list:}}
+        <tr>
+                <td><input class="input-mini" type="text" placeholder=".input-mini" value={{=n.id_order}}></td>
+                <td>{{=n.title}}</td>
+                <td><a href="/admin/content_edit/{{=n.id}}">编辑</a></td>
+                <td><a href="/admin/content_del/{{=n.id}}">删除</a></td>
+        </tr>
+        {{pass}}
+        </tbody>
+        </table>
+
     	</div>
     	<div class="tab-pane" id="catetab2">
 		{{<<content_form}}
