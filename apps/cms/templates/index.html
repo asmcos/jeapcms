@@ -1,0 +1,76 @@
+{{extend "cms_head.html"}}
+{{block content}}
+
+{{from cms.views import *
+cont6 = category_content(6)
+cont7 = category_content(7)
+cont8 = category_content(8,limit=3)
+cont9 = category_content(9)
+}}
+
+<div class="row">
+  <div class="span6">
+   <div class="boxed-group .warn">
+    <h3>最新活动</h3>
+    <div class="boxed-group-inner markdown-body">
+	<ul class="boxed-group-list">
+	最新的活动列表
+	{{for n in cont6:}}
+      <li class="linked-item .warn">{{=n.title}}</li>
+	{{pass}}
+	</ul>
+    </div>
+  </div>
+  </div> <!--span6-->
+
+
+  <div class="span4">
+   <div class="boxed-group">
+    <h3>新手入门</h3>
+    <div class="boxed-group-inner markdown-body">
+	<ul class="boxed-group-list">
+	新手入门书籍
+	{{for n in cont7:}}
+      <li class="linked-item .message">{{=n.title}}</li>
+	{{pass}}
+	</ul>
+    </div>
+  </div>
+ </div> <!--span3-->
+
+</div> <!--row-->
+  
+
+
+
+ <div class="boxed-group">
+    <h3>推荐视频</h3>
+    <div class="boxed-group-inner markdown-body">
+ 
+
+{{for n in cont8:}}
+
+<div class="discussion-bubble">
+      <img class="discussion-bubble-avatar" width="48" height="48" src={{=n.image}}>
+
+      <div class="discussion-bubble-content bubble">
+        <div class="discussion-bubble-inner">
+          <!-- content goes here -->
+	{{=n.title}}
+        </div>
+      </div>
+    </div>
+
+
+{{pass}}
+
+    </div>
+  </div>
+
+<div style="background:#4183c4;" class="styleguide-color">
+	{{for n in cont9:}}
+	<li>{{=n.title}}</li>
+	{{pass}}
+</div>
+
+{{end}}
