@@ -116,3 +116,21 @@ def content_del(id):
 	if c:
 		c.delete()
 	return redirect('/admin')
+
+###########################33
+@expose('/admin/upload')
+def  upload():
+	print "call me"
+	if require_login():
+		return redirect(url_for(login))
+	from uliweb.contrib.upload import save_file,get_href	
+	form = fileForm()
+	if request.method == 'GET':
+		return {'form':form}
+	if request.method == 'POST':
+		if form.validate(request.params, request.files):
+            		ret = save_file(form.file_upload.data.filename, form.file_upload.data.file)
+			url = get_href(ret)
+			print url
+			return json({'success':True, 'filename':form.filename.data.filename, 'url':url}, content_type="text/html;charset=utf-8")
+
