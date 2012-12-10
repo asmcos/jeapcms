@@ -12,6 +12,10 @@
   <div class="tab-content">
     <div class="tab-pane" id="tab1">
 	{{<<siteform}}
+	<div>
+	如果需要上传本地logo图片，点击这里
+ 	<input id="fileuploadlogo" type="file" name="files" >
+	</div>
     </div>
     <div class="tab-pane " id="tab3">
 	所有的用户
@@ -63,3 +67,18 @@
 
 
 {{end}}
+
+{{block js_script}}
+<script>
+$(function () {
+    $('#fileuploadlogo').fileupload({
+        dataType: 'json',
+        url: '/admin/upload',
+        done: function (e, data) {
+                document.getElementById('field_logo').value=data.result.url
+        }
+    });
+});
+
+</script>
+

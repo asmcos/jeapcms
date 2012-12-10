@@ -23,5 +23,3 @@ class contentForm(Form):
         content  = TextField(label="内容",required=True,rows=10,cols=60)
         image    = StringField(label="图片")
 
-class  fileForm(Form):
-	file_upload = FileField(label = "上传文件")
