@@ -25,6 +25,14 @@ def category_show(id):
 	cate_list = content.filter(content.c.cateid == id)
 	return {'site':site,'cate':cate,'cate_list':cate_list,'cate_info':cate_info}
 
+@expose('/content_show/<id>')
+def content_show(id):
+	site        = siteinfo.get(siteinfo.c.id == 1)
+	cate        = category.all()
+	content_info = content.get(content.c.id==id)
+	return {'site':site,'cate':cate,'content_info':content_info}
+
+
 
 def subString(string,length):  
     if length >= len(string):  
