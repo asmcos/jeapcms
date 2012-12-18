@@ -4,8 +4,11 @@
 {{from cms.views import *
 
 cate_name = category_get(6)
-count  =cate_name.count()
-n = list(cate_name)
+if cate_name:
+	count  =cate_name.count()
+	n = list(cate_name)
+else: 
+	count = 0
 
 if count > 0:
 	cont6 = category_content(n[0].id)
@@ -32,20 +35,20 @@ if count > 4:
 <div class="row" id="sub-hover">
 	<div class="span3" >
 	<a href=#>	<img src="static/1.png"> </a>
-		最新活动
+		{{=n[0].name}}	
 
 	</div>
 	<div class="span3">
 	<a href=#>	<img src="static/2.png"> </a>
-		公益视频
+		{{=n[1].name}}	
 	</div>
 	<div class="span3">
 	<a href=#>	<img src="static/3.png"> </a>
-		入门书籍
+		{{=n[2].name}}	
 	</div>
 	<div class="span2" style="height:100px">
 	<a href=#>	<img src="static/4.png"> </a>
-		热点文章
+		{{=n[3].name}}	
 	</div>
 </div>
 
