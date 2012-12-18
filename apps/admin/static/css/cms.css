@@ -15,3 +15,10 @@
     padding: 10px 10px 10px;
 }
 
+.cmswell {
+    padding: 19px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
