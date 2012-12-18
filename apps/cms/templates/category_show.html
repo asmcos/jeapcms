@@ -11,12 +11,12 @@
 {{for n in cate_list:}}
 
 <div class="cmswell">
-  <div class="box cutout" style="float:left;display:inline;">
+  <div class="box cutout" style="float:left;">
    <span class="image-wrap " style="position:relative; display:inline-block; background:url({{=n.image}}) no-repeat center center; width: 100px; height: 100px;">
     <img src={{=n.image}} style="opacity: 0;">
     </span>
    </div> 
-   <div style="float:right;display:inline-block;">
+   <div style="position:relative;float:left;">
 	<span><a href=/content_show/{{=n.id}}> {{=n.title}}</a></span></p>
         {{=subString(n.content,200)}}
    </div>
