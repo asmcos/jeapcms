@@ -1,11 +1,11 @@
 {{extend "head.html"}}
 
 {{block content}}
-{{use "xheditor"}}
+{{from cms.views import subString}}
 <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
     <li class="active"><a href="/admin" >站点管理</a></li>
-    <li class="active"><a href="#tab1" data-toggle="tab">{{=name}}</a></li>
+    <li class="active"><a href="#tab1" data-toggle="tab">{{=subString(name,20)}}</a></li>
   </ul>
   
   <div class="tab-content">
