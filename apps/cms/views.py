@@ -64,4 +64,4 @@ def subString(string,length):
             break;  
         else:  
             i = p  
-   return string[0:i]  	
+    return string[0:i]  	
