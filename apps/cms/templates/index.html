@@ -56,7 +56,7 @@ if count > 4:
     <div class="boxed-group-inner markdown-body">
 	<ul class="boxed-group-list">
 	{{for n in cont6:}}
-      <li class="linked-item .warn">{{=n.title}}</li>
+      <li class="linked-item .warn"><a href=/content_show/{{=n.id}}>{{=n.title}}</a></li>
 	{{pass}}
 	</ul>
     </div>
@@ -70,7 +70,7 @@ if count > 4:
     <div class="boxed-group-inner markdown-body">
 	<ul class="boxed-group-list">
 	{{for n in cont7:}}
-      <li class="linked-item .message">{{=n.title}}</li>
+      <li class="linked-item .message"> <a href=/content_show/{{=n.id}}>{{=n.title}}</a></li>
 	{{pass}}
 	</ul>
     </div>
