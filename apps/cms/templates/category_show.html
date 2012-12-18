@@ -1,0 +1,28 @@
+{{extend "cms_head.html"}}
+{{block content}}
+
+
+ <div class="boxed-group">
+    <h3>{{=cate_info.name}}</h3>
+    <div class="boxed-group-inner markdown-body">
+ 
+
+{{for n in cate_list:}}
+
+<div class="well">
+ <div class="box cutout">
+<span class="image-wrap " style="position:relative; display:inline-block; background:url({{=n.image}}) no-repeat center center; width: 100px; height: 100px;">
+<img src={{=n.image}} style="opacity: 0;">
+</span>
+</div> 
+	{{=n.title}}
+</div>
+{{pass}}
+
+    </div>
+ </div>
+
+
+
+
+{{end}}
