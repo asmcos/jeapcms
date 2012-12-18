@@ -4,11 +4,8 @@
 {{from cms.views import *
 
 cate_name = category_get(6)
-if cate_name:
-	count  =cate_name.count()
-	n = list(cate_name)
-else: 
-	count = 0
+count  = cate_name.count()
+n = list(cate_name)
 
 if count > 0:
 	cont6 = category_content(n[0].id)
