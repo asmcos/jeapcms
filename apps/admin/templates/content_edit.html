@@ -1,22 +1,20 @@
 {{extend "head.html"}}
 
+
+
 {{block content}}
-{{from cms.views import subString}}
-<div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="/admin" >站点管理</a></li>
-    <li class="active"><a href="#tab1" data-toggle="tab">{{=subString(name,20)}}</a></li>
-  </ul>
-  
-  <div class="tab-content">
+<div class="row">
+ <div class="span4 well">
+    <ul id="site" class="ztree"></ul>
+ </div>
+
+    <div class="span6 well">
 	
-    <div class="tab-pane active" id="tab1">
 		{{<<form}}
      </div>
 
 
-  </div>
-</div>
+</div> <!--row-->
 
 
 
@@ -38,5 +36,26 @@
     });
     });
     </script>
+<SCRIPT LANGUAGE="JavaScript">
+    var setting = {
+            data:{
+                simpleData:{
+                    enable:true,
+                    idKey:'id',
+                    pIdKey:'pId'
+                    }
+                },
+            async:{
+                enable:true,
+                url:"/getdatatree"
+                }
+    };
+
+    $(document).ready(function(){
+        $.fn.zTree.init($("#site"), setting);
+    });
+
+</SCRIPT>
+
 {{end}}
 

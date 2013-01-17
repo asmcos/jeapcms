@@ -128,3 +128,27 @@ def  upload():
 		url = get_href(ret)
 		return json({'success':True, 'filename':request.files['files'].filename, 'url':url}, content_type="text/html;charset=utf-8")
 
+
+
+@expose('/getdatatree')
+def getdatatree():
+    data = [{'id':'1','pId':'0','name':'所有内容','open':'true'},]
+    countid = 2
+    site = siteinfo.get(siteinfo.c.id == 1)
+    data.append({'id':countid,'pId':'1','name':site.name,'url':'/admin','target':'_self'})
+    
+    cate = category.all()
+    cont = content.all()
+    countid += 1
+
+    for s in cate:
+        cate_url='/admin/category_list/%s' % s.id
+        data.append({'id':countid,'pId':'1','name':s.name,'url':cate_url,'target':'_self'})
+        sid = countid
+        countid += 1
+        for d in cont:
+            if d.cateid == s.id:
+                content_url='/admin/content_edit/%s' % d.id
+                data.append({'id':countid,'pId':sid,'name':d.title,'url':content_url,'target':'_self'})
+                countid += 1
+    return json(data)
