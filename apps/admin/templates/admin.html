@@ -11,11 +11,27 @@
  </div>
 
  <div class="span6 well">
-	{{<<siteform}}
-	<div>
-	如果需要上传本地logo图片，点击这里
- 	<input id="fileuploadlogo" type="file" name="files" >
-	</div>
+      <div class="tabbable "> <!-- Only required for left/right tabs -->
+          <ul class="nav nav-tabs">
+           <li class="active"><a href="#catetab1" data-toggle="tab">站点信息</a></li>
+            <li><a href="#catetab2" data-toggle="tab">新建栏目</a></li>
+          </ul>
+        <div class="tab-content">
+         <div class="tab-pane active" id="catetab1">
+
+   	   {{<<siteform}}
+	   <div>
+	     如果需要上传本地logo图片，点击这里
+ 	     <input id="fileuploadlogo" type="file" name="files" >
+	   </div>
+	 </div> <!--tab pane active-->
+
+	 <div class="tab-pane" id="catetab2">
+                {{<<categoryform}}
+         </div>
+	</div> <!--tab-content-->
+      </div> <!--tabbable-->
+
  </div>
 </div> <!--row-->
 
